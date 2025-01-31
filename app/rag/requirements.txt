@@ -1,0 +1,9 @@
+flask
+flask-cors
+flask-jwt-extended
+pymongo
+gunicorn
+sqlalchemy
+pydantic
+pinecone
+pinecone_rag

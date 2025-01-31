@@ -1,0 +1,228 @@
+{
+    "id": "call_c4tp",
+    "key": "favorite author",
+    "value": "David Bohm",
+    "description": "Preference for favorite author is 'David Bohm'."
+}
+{
+    "id": "call_krgb",
+    "key": "book preference",
+    "value": "nonfiction",
+    "description": "Preference for book preference is 'nonfiction'."
+}
+{
+    "id": "call_c4tp",
+    "key": "favorite author",
+    "value": "David Bohm",
+    "description": "Preference for favorite author is 'David Bohm'."
+}
+{
+    "id": "call_krgb",
+    "key": "book preference",
+    "value": "nonfiction",
+    "description": "Preference for book preference is 'nonfiction'."
+}
+{
+    "id": "call_260y",
+    "key": "book title",
+    "value": "Whole Nymph",
+    "description": "Preference for book title is 'Whole Nymph'."
+}
+{
+    "id": "call_c4tp",
+    "key": "favorite author",
+    "value": "David Bohm",
+    "description": "Preference for favorite author is 'David Bohm'."
+}
+{
+    "id": "call_krgb",
+    "key": "book preference",
+    "value": "nonfiction",
+    "description": "Preference for book preference is 'nonfiction'."
+}
+{
+    "id": "call_260y",
+    "key": "book title",
+    "value": "Whole Nymph",
+    "description": "Preference for book title is 'Whole Nymph'."
+}
+{
+    "id": "call_rz6f",
+    "key": "book title",
+    "value": "Wholeness and the Implicate Order",
+    "description": "Preference for book title is 'Wholeness and the Implicate Order'."
+}
+{
+    "id": "call_anha",
+    "key": "preference",
+    "value": "likes ice cream",
+    "description": "Preference for preference is 'likes ice cream'."
+}
+{
+    "id": "call_anha",
+    "key": "preference",
+    "value": "likes ice cream",
+    "description": "Preference for preference is 'likes ice cream'."
+}
+{
+    "id": "call_7sb8",
+    "key": "preference",
+    "value": "likes mathematics",
+    "description": "Preference for preference is 'likes mathematics'."
+}
+{
+    "id": "call_anha",
+    "key": "preference",
+    "value": "likes ice cream",
+    "description": "Preference for preference is 'likes ice cream'."
+}
+{
+    "id": "call_7sb8",
+    "key": "preference",
+    "value": "likes mathematics",
+    "description": "Preference for preference is 'likes mathematics'."
+}
+{
+    "id": "call_9dj3",
+    "key": "preference",
+    "value": "favorite type of mathematics is linear algebra",
+    "description": "Preference for preference is 'favorite type of mathematics is linear algebra'."
+}
+{
+    "id": "call_anha",
+    "key": "preference",
+    "value": "likes ice cream",
+    "description": "Preference for preference is 'likes ice cream'."
+}
+{
+    "id": "call_7sb8",
+    "key": "preference",
+    "value": "likes mathematics",
+    "description": "Preference for preference is 'likes mathematics'."
+}
+{
+    "id": "call_9dj3",
+    "key": "preference",
+    "value": "favorite type of mathematics is linear algebra",
+    "description": "Preference for preference is 'favorite type of mathematics is linear algebra'."
+}
+{
+    "id": "call_pyjy",
+    "key": "username",
+    "value": "mathematics lover",
+    "description": "Preference for username is 'mathematics lover'."
+}
+{
+    "id": "call_0k91",
+    "key": "preference",
+    "value": "I love ice cream",
+    "description": "Preference for preference is 'I love ice cream'."
+}
+{
+    "id": "call_0k91",
+    "key": "preference",
+    "value": "I love ice cream",
+    "description": "Preference for preference is 'I love ice cream'."
+}
+{
+    "id": "call_vw4q",
+    "key": "favorite food",
+    "value": "ice cream",
+    "description": "Preference for favorite food is 'ice cream'."
+}
+{
+    "id": "call_5qm1",
+    "key": "favorite ice cream flavor",
+    "value": "Vanilla",
+    "description": "Preference for favorite ice cream flavor is 'Vanilla'."
+}
+{
+    "id": "call_h54q",
+    "key": "name",
+    "value": "User",
+    "description": "Preference for name is 'User'."
+}
+{
+    "id": "call_g8dt",
+    "key": "preference",
+    "value": "Vanilla ice cream",
+    "description": "Preference for preference is 'Vanilla ice cream'."
+}
+{
+    "id": "call_pavg",
+    "key": "book preference",
+    "value": "Atomic Habits",
+    "description": "Preference for book preference is 'Atomic Habits'."
+}
+{
+    "id": "call_b0fz",
+    "key": "username",
+    "value": "JohnDoe",
+    "description": "Preference for username is 'JohnDoe'."
+}
+{
+    "id": "call_73a3",
+    "key": "interest",
+    "value": "characters in Empire Strikes Back",
+    "description": "Preference for interest is 'characters in Empire Strikes Back'."
+}
+{
+    "id": "call_73a3",
+    "key": "interest",
+    "value": "characters in Empire Strikes Back",
+    "description": "Preference for interest is 'characters in Empire Strikes Back'."
+}
+{
+    "id": "call_9ace",
+    "key": "interest",
+    "value": "photoacoustic arrays",
+    "description": "Preference for interest is 'photoacoustic arrays'."
+}
+{
+    "id": "call_9ace",
+    "key": "interest",
+    "value": "photoacoustic arrays",
+    "description": "Preference for interest is 'photoacoustic arrays'."
+}
+{
+    "id": "call_31mr",
+    "key": "interest",
+    "value": "photo acoustic resonance",
+    "description": "Preference for interest is 'photo acoustic resonance'."
+}
+{
+    "id": "call_gjrf",
+    "key": "name",
+    "value": "Philip",
+    "description": "Preference for name is 'Philip'."
+}
+{
+    "id": "call_1fb0",
+    "key": "mood",
+    "value": "philosophical",
+    "description": "Preference for mood is 'philosophical'."
+}
+{
+    "id": "call_gjrf",
+    "key": "name",
+    "value": "Philip",
+    "description": "Preference for name is 'Philip'."
+}
+{
+    "id": "call_1fb0",
+    "key": "mood",
+    "value": "philosophical",
+    "description": "Preference for mood is 'philosophical'."
+}
+{
+    "id": "call_6f9m",
+    "key": "mood",
+    "value": "Philosophical",
+    "description": "Preference for mood is 'Philosophical'."
+}
+{
+    "id": "call_gnz6",
+    "key": "speech_pattern",
+    "value": "Sample text provided by the user for speech analysis",
+    "description": "Preference for speech_pattern is 'Sample text provided by the user for speech analysis'."
+}

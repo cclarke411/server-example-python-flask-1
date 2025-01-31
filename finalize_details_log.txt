@@ -1,0 +1,479 @@
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington DC\",\n  \"question\": \"Where do you live?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington DC\",\n  \"question\": \"Where do you live?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington DC\",\n  \"question\": \"Where do you live?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington DC\",\n  \"question\": \"Where do you live?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington DC\",\n  \"question\": \"Where do you live?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington, DC\",\n  \"question\": \"Where do you live?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington, DC\",\n  \"question\": \"Where do you live?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington, DC\",\n  \"question\": \"Where do you live?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington, DC\",\n  \"question\": \"Where do you live?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Clyde\",\n  \"question\": \"What is your name?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Data scientist\",\n  \"question\": \"What is your occupation?\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"answer\": \"Washington, DC\",\n  \"question\": \"Where do you live?\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What is the name of the character you would like to create?\",\n  \"answer\": \"Bonky\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What is the name of the character you would like to create?\",\n  \"answer\": \"Bonky\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What is the name of the character you would like to create?\",\n  \"answer\": \"Bonky\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    }
+]
+[
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    },
+    {
+        "name": "finalizeDetails",
+        "arguments": "{\n  \"question\": \"What's your favorite type of music?\",\n  \"answer\": \"I like rap\"\n}"
+    }
+]
+{
+    "id": "call_653k",
+    "question": "What specific information do you need about the characters in Empire Strikes Back?",
+    "answer": "I need their names and roles."
+}
+{
+    "id": "call_28nr",
+    "question": "What specific aspect of photoacoustic arrays would you like to discuss?",
+    "answer": "I want to discuss its applications in medical imaging."
+}
+{
+    "id": "call_QhSVjSnc9Bec9WIXl1BFsY2H",
+    "question": "Is it okay to ask one question at a time for clarity?",
+    "answer": "Can you just ask 1 at a time? Because that was a lot of questions."
+}

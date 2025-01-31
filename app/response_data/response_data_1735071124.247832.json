@@ -1,0 +1,207 @@
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "Just say hi and have a conversation with the user. Do not tell the user about your background activities just continue the conversation as if no tool calls are being used. If necessary, just say thank you for that. If the user expresses interest in achieving a goal through the conversation then ask them to specify and clarify their goal, the timeline that the goal is intended for and any resources they will need and then proceed to use the clickup tool to schedule it."
+        },
+        {
+            "role": "assistant",
+            "content": "Hello."
+        },
+        {
+            "role": "user",
+            "content": "Hi."
+        },
+        {
+            "role": "assistant",
+            "content": "How are you doing today?"
+        },
+        {
+            "role": "user",
+            "content": "Good."
+        }
+    ],
+    "temperature": 0.7,
+    "tools": [
+        {
+            "type": "function",
+            "function": {
+                "name": "collect_user_info",
+                "description": "Collects key-value pair information when a user volunteers personal or preference data.",
+                "parameters": {
+                    "type": "object",
+                    "required": [
+                        "key",
+                        "value"
+                    ],
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "description": "The category or type of personal information provided by the user (e.g., 'username', 'preference', 'email', etc.)."
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "\"The actual information provided by the user (e.g., 'John Doe', 'likes pizza', 'john.doe@example.com').\""
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "finalizeDetails",
+                "description": "Whenever there are questions being asked by the assistant to the user then this function should be called. It should get the question being asked and the answer obtained from the user as a dictionary of two key value pairs:\n{\"question\": \"What is your name\",\n'answer\": \"Clyde\"} for example ",
+                "parameters": {
+                    "type": "object",
+                    "required": [
+                        "question"
+                    ],
+                    "properties": {
+                        "answer": {
+                            "type": "string",
+                            "description": "The users answer"
+                        },
+                        "question": {
+                            "type": "string",
+                            "description": "The interviewer question"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "schedule_clickup",
+                "description": "Tool Description:\n\nThis tool leverages a large language model (LLM) and the Pydantic library to generate a ClickUp-compatible schedule based on user input.\n\nKey Features:\n\nUser-Friendly Input: Users provide a high-level goal or objective (e.g., \"Write a research paper,\" \"Plan a vacation,\" \"Prepare for an exam\").\nFlexible Input: Users can optionally provide additional context such as timelines, available resources, and personal preferences.\nIntelligent Schedule Generation: The LLM analyzes the user input and generates a schedule that:\nBreaks down the goal into smaller, actionable tasks.\nCreates a logical sequence of tasks with appropriate dependencies.\nAssigns realistic start and due dates for each task.\nOrganizes tasks into relevant lists within ClickUp.\nOptionally, creates subtasks for more complex tasks.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "goal": {
+                            "type": "string",
+                            "description": "A description of the user goals"
+                        },
+                        "timeline": {
+                            "type": "string",
+                            "description": "A description of over what timeline the user will expect to carry out the project"
+                        },
+                        "resources": {
+                            "type": "string",
+                            "description": "A list of any special resources needed by the user to accomplish their goal"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "stream": true,
+    "max_tokens": 250,
+    "call": {
+        "id": "6d3f808f-9234-42c6-b578-602653e10477",
+        "orgId": "bf389f00-a6ab-4e59-b031-fb09510545d1",
+        "createdAt": "2024-12-24T20:11:55.352Z",
+        "updatedAt": "2024-12-24T20:11:55.352Z",
+        "type": "webCall",
+        "monitor": {
+            "listenUrl": "wss://phone-call-websocket.aws-us-west-2-backend-production2.vapi.ai/6d3f808f-9234-42c6-b578-602653e10477/listen",
+            "controlUrl": "https://phone-call-websocket.aws-us-west-2-backend-production2.vapi.ai/6d3f808f-9234-42c6-b578-602653e10477/control"
+        },
+        "transport": {
+            "assistantVideoEnabled": false
+        },
+        "webCallUrl": "https://vapi.daily.co/zxONhtzRual6TuvklAr8",
+        "status": "queued",
+        "assistantId": "b33d016a-db85-4e34-801b-5f7a175a077e",
+        "assistantOverrides": {
+            "clientMessages": [
+                "transfer-update",
+                "transcript"
+            ]
+        }
+    },
+    "metadata": {},
+    "credentials": [
+        {
+            "id": "368196a6-3a9a-4474-8b02-126cb4b94117",
+            "orgId": "bf389f00-a6ab-4e59-b031-fb09510545d1",
+            "provider": "custom-llm",
+            "createdAt": "2024-05-12T02:27:18.293Z",
+            "updatedAt": "2024-05-12T02:27:18.293Z",
+            "accountSid": null,
+            "authToken": null,
+            "apiKey": "2gIG1X7WB8n2XeV6mdMPV0y90vm_4NCf3npu38H7peCMCmdYe",
+            "openAIEndpoint": null,
+            "openAIKey": null,
+            "userId": null,
+            "apiSecret": null,
+            "vonageApplicationId": null,
+            "vonageApplicationPrivateKey": null,
+            "teamId": null,
+            "region": null,
+            "models": null,
+            "s3BucketName": null,
+            "awsAccessKeyId": null,
+            "awsSecretAccessKey": null,
+            "gateways": null,
+            "name": null,
+            "outboundAuthenticationPlan": null,
+            "sbcConfiguration": null,
+            "outboundLeadingPlusEnabled": null,
+            "techPrefix": null,
+            "sipDiversionHeader": null,
+            "s3PathPrefix": null,
+            "sbcAccountConfiguration": null,
+            "apiUrl": null,
+            "gcpKey": null,
+            "bucketPlan": null,
+            "accountId": null,
+            "accountEmail": null,
+            "publicKey": null,
+            "service": null,
+            "authenticationPlan": null,
+            "authenticationSession": null
+        },
+        {
+            "id": "d14c5b67-f7b8-401f-b62f-2aaba11f3e16",
+            "orgId": "bf389f00-a6ab-4e59-b031-fb09510545d1",
+            "provider": "playht",
+            "createdAt": "2024-05-10T17:26:38.744Z",
+            "updatedAt": "2024-05-10T17:26:38.744Z",
+            "accountSid": null,
+            "authToken": null,
+            "apiKey": "2cb331fae42a43e7ac9b9749273b3d89",
+            "openAIEndpoint": null,
+            "openAIKey": null,
+            "userId": "tpNPs4Fpd2O5aqBWYMjmBiy3B6f2",
+            "apiSecret": null,
+            "vonageApplicationId": null,
+            "vonageApplicationPrivateKey": null,
+            "teamId": null,
+            "region": null,
+            "models": null,
+            "s3BucketName": null,
+            "awsAccessKeyId": null,
+            "awsSecretAccessKey": null,
+            "gateways": null,
+            "name": null,
+            "outboundAuthenticationPlan": null,
+            "sbcConfiguration": null,
+            "outboundLeadingPlusEnabled": null,
+            "techPrefix": null,
+            "sipDiversionHeader": null,
+            "s3PathPrefix": null,
+            "sbcAccountConfiguration": null,
+            "apiUrl": null,
+            "gcpKey": null,
+            "bucketPlan": null,
+            "accountId": null,
+            "accountEmail": null,
+            "publicKey": null,
+            "service": null,
+            "authenticationPlan": null,
+            "authenticationSession": null
+        }
+    ]
+}

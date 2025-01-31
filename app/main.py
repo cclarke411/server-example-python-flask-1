@@ -1,6 +1,7 @@
 import os
 import logging
 from flask import Flask, request
+from flask_jwt_extended import JWTManager
 from .api import api as api_blueprint
 from flask_cors import CORS
 
@@ -10,8 +11,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+app.config["JWT_SECRET_KEY"] =  os.getenv('FLASK_JWT_SECRET_KEY') # Update with your actual secret key
 CORS(app)
-
+jwt = JWTManager(app)  # Initialize JWT with the Flask app
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

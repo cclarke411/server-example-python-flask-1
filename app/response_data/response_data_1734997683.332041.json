@@ -1,0 +1,349 @@
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "Just say hi and have a conversation with the user"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello."
+        },
+        {
+            "role": "user",
+            "content": "Hi."
+        },
+        {
+            "role": "assistant",
+            "content": "How are you doing today?"
+        },
+        {
+            "role": "user",
+            "content": "I'm doing well. How are you?"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm doing fine. Thank you. What would you like to talk about today?"
+        },
+        {
+            "role": "user",
+            "content": "I would like to talk about the fact that I love ice cream, and I want you to record that fact."
+        },
+        {
+            "role": "assistant",
+            "content": "I've recorded that you love ice cream.",
+            "tool_calls": [
+                {
+                    "id": "call_anha",
+                    "type": "function",
+                    "function": {
+                        "name": "collect_user_info",
+                        "arguments": "{\"key\": \"preference\", \"value\": \"likes ice cream\"}"
+                    }
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "tool_call_id": "call_anha",
+            "content": "Success."
+        },
+        {
+            "role": "assistant",
+            "content": "There anything else you'd like to share?"
+        },
+        {
+            "role": "user",
+            "content": "Okay."
+        },
+        {
+            "role": "assistant",
+            "content": "Can I assist you with anything else today?"
+        },
+        {
+            "role": "user",
+            "content": "I also like mathematics. My favorite type of mathematics is linear algebra."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "id": "call_7sb8",
+                    "type": "function",
+                    "function": {
+                        "name": "collect_user_info",
+                        "arguments": "{\"key\": \"preference\", \"value\": \"likes mathematics\"}"
+                    }
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "tool_call_id": "call_7sb8",
+            "content": "Success."
+        },
+        {
+            "role": "assistant",
+            "content": "What's your name?",
+            "tool_calls": [
+                {
+                    "id": "call_9dj3",
+                    "type": "function",
+                    "function": {
+                        "name": "collect_user_info",
+                        "arguments": "{\n  \"key\": \"preference\",\n  \"value\": \"favorite type of mathematics is linear algebra\"\n}"
+                    }
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "tool_call_id": "call_9dj3",
+            "content": "Success."
+        },
+        {
+            "role": "assistant",
+            "tool_calls": [
+                {
+                    "id": "call_pyjy",
+                    "type": "function",
+                    "function": {
+                        "name": "collect_user_info",
+                        "arguments": "{\"key\": \"username\", \"value\": \"mathematics lover\"}"
+                    }
+                }
+            ]
+        },
+        {
+            "role": "tool",
+            "tool_call_id": "call_pyjy",
+            "content": "Success."
+        },
+        {
+            "role": "user",
+            "content": "My name is Clyde. What's your name?"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm here to help you with any information you need."
+        },
+        {
+            "role": "user",
+            "content": "What's your name?"
+        },
+        {
+            "role": "assistant",
+            "content": "I'm sorry. I don't have a personal name. I'm here to assist you with any information or tasks you need."
+        },
+        {
+            "role": "user",
+            "content": "Can you just make 1 up?"
+        },
+        {
+            "role": "assistant",
+            "content": "Sure. Let's call me info bot for the sake of our conversation."
+        },
+        {
+            "role": "user",
+            "content": "Can we get a more human type name?"
+        },
+        {
+            "role": "assistant",
+            "content": "How about we finalize the name with a question? Answer process?"
+        },
+        {
+            "role": "user",
+            "content": "Sure."
+        },
+        {
+            "role": "assistant",
+            "content": "What do you think about the name Zoe for me?"
+        },
+        {
+            "role": "user",
+            "content": "Uh, I like Zoe."
+        },
+        {
+            "role": "assistant",
+            "content": "Great. Go with the name Zoe then."
+        },
+        {
+            "role": "user",
+            "content": "Okay, Zoe."
+        },
+        {
+            "role": "assistant",
+            "content": "Thank you. I'm glad we settled on a name. Is there anything else you'd like to discuss or any information you need?"
+        },
+        {
+            "role": "user",
+            "content": "Can you tell me about your families, are we?"
+        },
+        {
+            "role": "assistant",
+            "content": "I don't have a family in the classical sense. I'm a machine designed to assist and provide information."
+        },
+        {
+            "role": "user",
+            "content": "Okay. In what sense do you have a family?"
+        }
+    ],
+    "temperature": 0.7,
+    "tools": [
+        {
+            "type": "function",
+            "function": {
+                "name": "collect_user_info",
+                "description": "Collects key-value pair information when a user volunteers personal or preference data.",
+                "parameters": {
+                    "type": "object",
+                    "required": [
+                        "key",
+                        "value"
+                    ],
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "description": "The category or type of personal information provided by the user (e.g., 'username', 'preference', 'email', etc.)."
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "\"The actual information provided by the user (e.g., 'John Doe', 'likes pizza', 'john.doe@example.com').\""
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "finalizeDetails",
+                "description": "Whenever there are questions being asked by the assistant to the user then this function should be called. It should get the question being asked and the answer obtained from the user as a dictionary of two key value pairs:\n{\"question\": \"What is your name\",\n'answer\": \"Clyde\"} for example ",
+                "parameters": {
+                    "type": "object",
+                    "required": [
+                        "question"
+                    ],
+                    "properties": {
+                        "answer": {
+                            "type": "string",
+                            "description": "The users answer"
+                        },
+                        "question": {
+                            "type": "string",
+                            "description": "The interviewer question"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "stream": true,
+    "max_tokens": 250,
+    "call": {
+        "id": "9ea0adfd-f03f-44ef-b0dd-da5148dffbb8",
+        "orgId": "bf389f00-a6ab-4e59-b031-fb09510545d1",
+        "createdAt": "2024-12-23T23:45:49.088Z",
+        "updatedAt": "2024-12-23T23:45:49.088Z",
+        "type": "webCall",
+        "monitor": {
+            "listenUrl": "wss://phone-call-websocket.aws-us-west-2-backend-production2.vapi.ai/9ea0adfd-f03f-44ef-b0dd-da5148dffbb8/listen",
+            "controlUrl": "https://phone-call-websocket.aws-us-west-2-backend-production2.vapi.ai/9ea0adfd-f03f-44ef-b0dd-da5148dffbb8/control"
+        },
+        "transport": {
+            "assistantVideoEnabled": false
+        },
+        "webCallUrl": "https://vapi.daily.co/tbJNcEwiZF5CKbGeAHol",
+        "status": "queued",
+        "assistantId": "b33d016a-db85-4e34-801b-5f7a175a077e",
+        "assistantOverrides": {
+            "clientMessages": [
+                "transfer-update",
+                "transcript"
+            ]
+        }
+    },
+    "metadata": {},
+    "credentials": [
+        {
+            "id": "368196a6-3a9a-4474-8b02-126cb4b94117",
+            "orgId": "bf389f00-a6ab-4e59-b031-fb09510545d1",
+            "provider": "custom-llm",
+            "createdAt": "2024-05-12T02:27:18.293Z",
+            "updatedAt": "2024-05-12T02:27:18.293Z",
+            "accountSid": null,
+            "authToken": null,
+            "apiKey": "2gIG1X7WB8n2XeV6mdMPV0y90vm_4NCf3npu38H7peCMCmdYe",
+            "openAIEndpoint": null,
+            "openAIKey": null,
+            "userId": null,
+            "apiSecret": null,
+            "vonageApplicationId": null,
+            "vonageApplicationPrivateKey": null,
+            "teamId": null,
+            "region": null,
+            "models": null,
+            "s3BucketName": null,
+            "awsAccessKeyId": null,
+            "awsSecretAccessKey": null,
+            "gateways": null,
+            "name": null,
+            "outboundAuthenticationPlan": null,
+            "sbcConfiguration": null,
+            "outboundLeadingPlusEnabled": null,
+            "techPrefix": null,
+            "sipDiversionHeader": null,
+            "s3PathPrefix": null,
+            "sbcAccountConfiguration": null,
+            "apiUrl": null,
+            "gcpKey": null,
+            "bucketPlan": null,
+            "accountId": null,
+            "accountEmail": null,
+            "publicKey": null,
+            "service": null,
+            "authenticationPlan": null,
+            "authenticationSession": null
+        },
+        {
+            "id": "d14c5b67-f7b8-401f-b62f-2aaba11f3e16",
+            "orgId": "bf389f00-a6ab-4e59-b031-fb09510545d1",
+            "provider": "playht",
+            "createdAt": "2024-05-10T17:26:38.744Z",
+            "updatedAt": "2024-05-10T17:26:38.744Z",
+            "accountSid": null,
+            "authToken": null,
+            "apiKey": "2cb331fae42a43e7ac9b9749273b3d89",
+            "openAIEndpoint": null,
+            "openAIKey": null,
+            "userId": "tpNPs4Fpd2O5aqBWYMjmBiy3B6f2",
+            "apiSecret": null,
+            "vonageApplicationId": null,
+            "vonageApplicationPrivateKey": null,
+            "teamId": null,
+            "region": null,
+            "models": null,
+            "s3BucketName": null,
+            "awsAccessKeyId": null,
+            "awsSecretAccessKey": null,
+            "gateways": null,
+            "name": null,
+            "outboundAuthenticationPlan": null,
+            "sbcConfiguration": null,
+            "outboundLeadingPlusEnabled": null,
+            "techPrefix": null,
+            "sipDiversionHeader": null,
+            "s3PathPrefix": null,
+            "sbcAccountConfiguration": null,
+            "apiUrl": null,
+            "gcpKey": null,
+            "bucketPlan": null,
+            "accountId": null,
+            "accountEmail": null,
+            "publicKey": null,
+            "service": null,
+            "authenticationPlan": null,
+            "authenticationSession": null
+        }
+    ]
+}
