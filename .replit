@@ -1,0 +1,8 @@
+modules = ["python-3.11"]
+run = "  poetry run flask --app ./app/main run "
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "  poetry run flask --app ./app/main run "]

@@ -9,9 +9,9 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from app.rag import pinecone_rag
 from groq import Groq
-from pinecone import Pinecone 
+from pinecone import Pinecone
 from app.functions.get_custom_llm_streaming import generate_user_uuid, augment_system_lists
-import instructor 
+import instructor
 from app.rag.db import get_user_by_email, get_user_by_id, add_color_to_user, change_char, check_if_user_exists, create_user
 
 logging.basicConfig(level=logging.INFO)
@@ -20,52 +20,54 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 finalize_details_args = []
 
-
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
 user_index = pc.Index("user-data-openai-embedding")
 book_index = pc.Index("ah-test")
 
-
 custom_llm = Blueprint('custom_llm', __name__)
 
 # client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+client = Groq(
+    api_key='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')
 
 # OpenAI Client
 client_openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-# client_openai_instructor = instructor.from_openai(client_openai)  
+# client_openai_instructor = instructor.from_openai(client_openai)
 
 
 @custom_llm.route('/token', methods=['POST'])
 def test():
     # print(request.json)
-    username, email, picture = request.json.get('username'), request.json.get('email'), request.json.get('picture')
+    username, email, picture = request.json.get('username'), request.json.get(
+        'email'), request.json.get('picture')
     user_exists = check_if_user_exists(email)
     if not user_exists:
-        result = str(create_user({
-            'username': username,
-            'email': email,
-            'picture': picture,
-            'current_bg': 'black',
-            'notifications': [],
-            'character': {
-                'name': '', 
-                'alias': '', 
-                'super_skill':'', 
-                'weakness' : '', 
-                'powers':[], 
-                'equipments':[], 
-                'height' : '', 
-                'age':0, 
-                'birthplace': '' 
-            }
-        }).inserted_id)
+        result = str(
+            create_user({
+                'username': username,
+                'email': email,
+                'picture': picture,
+                'current_bg': 'black',
+                'notifications': [],
+                'character': {
+                    'name': '',
+                    'alias': '',
+                    'super_skill': '',
+                    'weakness': '',
+                    'powers': [],
+                    'equipments': [],
+                    'height': '',
+                    'age': 0,
+                    'birthplace': ''
+                }
+            }).inserted_id)
         access_token = create_access_token(identity=result)
     else:
         result = str(get_user_by_email(email)['_id'])
         access_token = create_access_token(identity=result)
-    
-    return jsonify(access_token=access_token,success=True)
+
+    return jsonify(access_token=access_token, success=True)
+
 
 @custom_llm.route('/user')
 @jwt_required()
@@ -74,7 +76,6 @@ def get_user():
     user = get_user_by_id(user_id)
     user['_id'] = str(user['_id'])
     return jsonify(user=user, success=True)
-
 
 
 @custom_llm.route('/color', methods=['POST'])
@@ -94,26 +95,35 @@ def add_to_book():
     changes = {key: value}
     change_char(changes, user_id)
     return jsonify(success=True)
-    
+
+
 @custom_llm.route('/basic/chat/completions', methods=['POST'])
 def basic_custom_llm_route():
-  request_data = request.get_json()
-  response = {
-    "id": "chatcmpl-8mcLf78g0quztp4BMtwd3hEj58Uof",
-    "object": "chat.completion",
-    "created": int(time.time()),
-    "model": "gpt-3.5-turbo-0613",
-    "system_fingerprint": None,
-    "choices": [
-      {
-        "index": 0,
-        "delta": {"content": request_data['messages'][-1]['content'] if len(request_data['messages']) > 0 else ""},
-        "logprobs": None,
-        "finish_reason": "stop"
-      }
-    ]
-  }
-  return jsonify(response), 200
+    request_data = request.get_json()
+    response = {
+        "id":
+        "chatcmpl-8mcLf78g0quztp4BMtwd3hEj58Uof",
+        "object":
+        "chat.completion",
+        "created":
+        int(time.time()),
+        "model":
+        "gpt-3.5-turbo-0613",
+        "system_fingerprint":
+        None,
+        "choices": [{
+            "index": 0,
+            "delta": {
+                "content":
+                request_data['messages'][-1]['content']
+                if len(request_data['messages']) > 0 else ""
+            },
+            "logprobs": None,
+            "finish_reason": "stop"
+        }]
+    }
+    return jsonify(response), 200
+
 
 # @custom_llm.route('/chat/completions', methods=['POST'])
 # def openai_advanced_custom_llm_basic_route():
@@ -188,7 +198,7 @@ def basic_custom_llm_route():
 
 #             model_config = request_data.get("message", {}).get("assistant", {}).get("model", {})
 #             stream = request_data.get("message", {}).get("analysis", {}).get("streaming", True)
-            
+
 #             query_string = messages[-1]['content']
 
 #             if query_string.lower() in ["help", "what can i ask?"]:
@@ -203,7 +213,7 @@ def basic_custom_llm_route():
 #                 "stream": stream,
 #                 "tools": tools
 #             }
-            
+
 #             # Handle streaming and non-streaming cases
 #             if stream:
 #                 # Generate streaming response
@@ -225,6 +235,7 @@ def basic_custom_llm_route():
 #     else:
 #         # If model field is an empty list, skip the try block and return a response
 #         return jsonify({"message": "Model field is empty or not provided. No operation performed."}), 400
+
 
 @custom_llm.route('/chat/completions', methods=['POST'])
 async def openai_advanced_chat_completions_route_new():
@@ -248,8 +259,12 @@ async def openai_advanced_chat_completions_route_new():
             # Extract relevant data from the request
             messages = request_data.get("messages", [])
             tools = request_data.get("tools", None)
-            model_config = request_data.get("message", {}).get("assistant", {}).get("model", {})
-            stream = request_data.get("message", {}).get("analysis", {}).get("streaming", True)
+            model_config = request_data.get("message",
+                                            {}).get("assistant",
+                                                    {}).get("model", {})
+            stream = request_data.get("message",
+                                      {}).get("analysis",
+                                              {}).get("streaming", True)
 
             if not messages:
                 raise ValueError("Messages field is required in the request.")
@@ -258,17 +273,23 @@ async def openai_advanced_chat_completions_route_new():
             query_string = messages[-1]['content']
             if query_string.lower() in ["help", "what can i ask?"]:
                 assistance_text = provide_interaction_assistance()
-                return Response(generate_streaming_introduction(assistance_text), content_type='text/event-stream')
+                return Response(
+                    generate_streaming_introduction(assistance_text),
+                    content_type='text/event-stream')
 
             # Classify the input to determine context
-            atomic_habits_keywords = ["habit", "Atomic Habits", "James Clear", "self-improvement", "routine", "productivity"]
-            classification_result = pinecone_rag.classify(query_string, atomic_habits_keywords)
+            atomic_habits_keywords = [
+                "habit", "Atomic Habits", "James Clear", "self-improvement",
+                "routine", "productivity"
+            ]
+            classification_result = pinecone_rag.classify(
+                query_string, atomic_habits_keywords)
             classification_label = classification_result.label
 
             # Get embedding for the query string
             # embedding = pinecone_rag.get_embedding(query_string)
             # print(query_string,embedding)
-            # Metadata Format: 
+            # Metadata Format:
             # metadata{
             #         "data":{
             #               user: {
@@ -281,21 +302,27 @@ async def openai_advanced_chat_completions_route_new():
             # email_address = request_data.get("metadata", {}).get("data", {}).get("user", {}).get('email', 'unknown')
             # user_name = request_data.get("metadata",{}).get("data", {}).get("user", {}).get('username', 'unknown')
 
-            user_name = request_data.get('metadata',[]).get('user_id',[])
-            email_address = request_data.get('metadata',[]).get('user_id',[])
+            user_name = request_data.get('metadata', []).get('user_id', [])
+            email_address = request_data.get('metadata', []).get('user_id', [])
 
-            user_id = generate_user_uuid(user_name,email_address)
-             
+            user_id = generate_user_uuid(user_name, email_address)
+
             # Vector context retrieval based on classification
             contexts = []
             if classification_label == "PERSONAL":
                 # user_index = "user-data-openai-embedding"  # Specify the user index
-                res = pinecone_rag.query_pinecone_user(query_string,user_index,top_k=1, namespace='user-data-openai-embedding')
-                contexts.extend([x['metadata']['text'] for x in res['matches']])
+                res = pinecone_rag.query_pinecone_user(
+                    query_string,
+                    user_index,
+                    top_k=1,
+                    namespace='user-data-openai-embedding')
+                contexts.extend(
+                    [x['metadata']['text'] for x in res['matches']])
                 # print("******USER CONTEXT*********",contexts)
             elif classification_label == "ATOMIC_HABITS":
                 # book_index = "ah-test"  # Specify the book index
-                context_strings = pinecone_rag.query_pinecone_book(query_string,book_index, top_k=1, namespace='ah-test')
+                context_strings = pinecone_rag.query_pinecone_book(
+                    query_string, book_index, top_k=1, namespace='ah-test')
                 # contexts.extend([x['metadata']['text'] for x in res['matches']])
                 contexts.extend(context_strings)
                 # print("******BOOK CONTEXT*********",contexts)
@@ -308,16 +335,22 @@ async def openai_advanced_chat_completions_route_new():
                                              remove all special characters from your response such as #,*, &, ^, %, $, !"""}]
 
             conversation = augment_system_lists(system_message, messages)
-            
+
             prompt_end = "The following may or may not be relevant information from past conversations. If it is not relevant to this conversation, ignore it:\n\n"
-            prompt = query_string + "\n\n" + prompt_end + "\n\n---\n\n".join(contexts[:1]) 
+            prompt = query_string + "\n\n" + prompt_end + "\n\n---\n\n".join(
+                contexts[:1])
 
             # Augment the origin_sys with final_sys
-            conversation.append({"role": "user", "content": f'Use the following information {prompt} \n to answer the {query_string} is applicable else just answer to the best of your ability'})
+            conversation.append({
+                "role":
+                "user",
+                "content":
+                f'Use the following information {prompt} \n to answer the {query_string} is applicable else just answer to the best of your ability'
+            })
             # print(conversation)
             # Prepare the request payload for the LLM client
             llm_request_data = {
-                "model": "gpt-4o",#model_config.get("model", "gpt-4o"),
+                "model": "gpt-4o",  #model_config.get("model", "gpt-4o"),
                 "messages": conversation,
                 "temperature": model_config.get("temperature", 0.7),
                 "stream": stream,
@@ -326,22 +359,33 @@ async def openai_advanced_chat_completions_route_new():
 
             # Handle streaming and non-streaming cases
             if stream:
-                chat_completion_stream = client_openai.chat.completions.create(**llm_request_data)
-                return Response(generate_streaming_response(chat_completion_stream), content_type='text/event-stream')
+                chat_completion_stream = client_openai.chat.completions.create(
+                    **llm_request_data)
+                return Response(
+                    generate_streaming_response(chat_completion_stream),
+                    content_type='text/event-stream')
             else:
-                chat_completion = client.chat.completions.create(**llm_request_data)
-                return Response(chat_completion.model_dump_json(), content_type='application/json')
+                chat_completion = client.chat.completions.create(
+                    **llm_request_data)
+                return Response(chat_completion.model_dump_json(),
+                                content_type='application/json')
 
         except ValueError as ve:
             logger.error(f"ValueError: {str(ve)}")
             return jsonify({"error": str(ve)}), 400
         except Exception as e:
             logger.error(f"Unexpected error: {str(e)}", exc_info=True)
-            return jsonify({"error": "An unexpected error occurred. Please try again later."}), 500
+            return jsonify({
+                "error":
+                "An unexpected error occurred. Please try again later."
+            }), 500
     else:
         pass
     # If the model field is empty or missing, return a 400 response
-    return jsonify({"message": "Model field is empty or not provided. No operation performed."}), 400
+    return jsonify({
+        "message":
+        "Model field is empty or not provided. No operation performed."
+    }), 400
 
 
 # @custom_llm.route('/finalizeDetails', methods=['POST'])
@@ -352,13 +396,14 @@ async def openai_advanced_chat_completions_route_new():
 #         request_data = request.get_json()
 #         payload = request_data.get('message')
 #         print(payload)
-#         if not request_data:  
+#         if not request_data:
 #             raise ValueError("No JSON data provided in the request.")
 #         else:
 #             return(jsonify(payload), 200)
 #     except Exception as e:
 #             logger.error(f"Unexpected error: {str(e)}", exc_info=True)
 #             return jsonify({"error": "An unexpected error occurred. Please try again later."}), 500
+
 
 @custom_llm.route('/finalizeDetails', methods=['POST'])
 def finalize_details():
@@ -371,7 +416,7 @@ def finalize_details():
         # print(payload_type)
         if not request_data:
             raise ValueError("No JSON data provided in the request.")
-        
+
         # Extract relevant payload
         payload = request_data.get('message')
 
@@ -403,7 +448,9 @@ def finalize_details():
                         arguments_list.append(function.get("arguments"))
 
             # Search in `messagesOpenAIFormatted`
-            formatted_messages = data.get("artifact", {}).get("messagesOpenAIFormatted", [])
+            formatted_messages = data.get("artifact",
+                                          {}).get("messagesOpenAIFormatted",
+                                                  [])
             for message in formatted_messages:
                 tool_calls = message.get("tool_calls", [])
                 for call in tool_calls:
@@ -424,9 +471,14 @@ def finalize_details():
                 json.dump(arguments, json_file, indent=2)
         # Include extracted arguments in the response
         response = {
-            "payload": payload,
-            "finalizeDetailsArguments": extracted_arguments,
-            "savedFiles": [f"response_{i + 1}.json" for i in range(len(extracted_arguments))]
+            "payload":
+            payload,
+            "finalizeDetailsArguments":
+            extracted_arguments,
+            "savedFiles": [
+                f"response_{i + 1}.json"
+                for i in range(len(extracted_arguments))
+            ]
         }
         # print(response)
         return jsonify(response), 200
@@ -436,57 +488,63 @@ def finalize_details():
         return jsonify({"error": str(ve)}), 400
     except Exception as e:
         logger.error(f"Unexpected error: {str(e)}", exc_info=True)
-        return jsonify({"error": "An unexpected error occurred. Please try again later."}), 500
+        return jsonify(
+            {"error":
+             "An unexpected error occurred. Please try again later."}), 500
 
 
 @custom_llm.route('/openai-sse/chat/completions', methods=['POST'])
 def custom_llm_openai_sse_handler():
-  request_data = request.get_json()
-  streaming = request_data.get('stream', False)
+    request_data = request.get_json()
+    streaming = request_data.get('stream', False)
 
-  if streaming:
-    # Simulate a stream of responses
+    if streaming:
+        # Simulate a stream of responses
 
-    chat_completion_stream = client.chat.completions.create(**request_data)
+        chat_completion_stream = client.chat.completions.create(**request_data)
 
-
-    return Response(generate_streaming_response(chat_completion_stream), content_type='text/event-stream')
-  else:
-    # Simulate a non-streaming response
-    chat_completion = client.chat.completions.create(**request_data)
-    return Response(chat_completion.model_dump_json(), content_type='application/json')
+        return Response(generate_streaming_response(chat_completion_stream),
+                        content_type='text/event-stream')
+    else:
+        # Simulate a non-streaming response
+        chat_completion = client.chat.completions.create(**request_data)
+        return Response(chat_completion.model_dump_json(),
+                        content_type='application/json')
 
 
 @custom_llm.route('/openai-advanced/chat/completions', methods=['POST'])
 def openai_advanced_custom_llm_route():
-  request_data = request.get_json()
-  streaming = request_data.get('stream', False)
+    request_data = request.get_json()
+    streaming = request_data.get('stream', False)
 
-
-  last_message = request_data['messages'][-1]
-  prompt = f"""
+    last_message = request_data['messages'][-1]
+    prompt = f"""
     Create a prompt which can act as a prompt template where I put the original prompt and it can modify it according to my intentions so that the final modified prompt is more detailed. You can expand certain terms or keywords.
     ----------
     PROMPT: {last_message['content']}.
     MODIFIED PROMPT: """
-  completion = client.completions.create(
-    model= "gpt-3.5-turbo-instruct",
-    prompt=prompt,
-    max_tokens=500,
-    temperature=0.7
-  )
-  modified_message = request_data['messages'][:-1] + [{'content': completion.choices[0].text, 'role': last_message['role']}]
+    completion = client.completions.create(model="gpt-3.5-turbo-instruct",
+                                           prompt=prompt,
+                                           max_tokens=500,
+                                           temperature=0.7)
+    modified_message = request_data['messages'][:-1] + [{
+        'content':
+        completion.choices[0].text,
+        'role':
+        last_message['role']
+    }]
 
-  request_data['messages'] = modified_message
-  if streaming:
-    chat_completion_stream = client.chat.completions.create(**request_data)
+    request_data['messages'] = modified_message
+    if streaming:
+        chat_completion_stream = client.chat.completions.create(**request_data)
 
-
-    return Response(generate_streaming_response(chat_completion_stream), content_type='text/event-stream')
-  else:
-    # Simulate a non-streaming response
-    chat_completion = client.chat.completions.create(**request_data)
-    return Response(chat_completion.model_dump_json(), content_type='application/json')
+        return Response(generate_streaming_response(chat_completion_stream),
+                        content_type='text/event-stream')
+    else:
+        # Simulate a non-streaming response
+        chat_completion = client.chat.completions.create(**request_data)
+        return Response(chat_completion.model_dump_json(),
+                        content_type='application/json')
 
 
 # Function to provide interaction assistance and command handling
@@ -502,14 +560,16 @@ def provide_interaction_assistance() -> str:
     )
     return assistance_text
 
+
 def generate_streaming_response(data):
-  """
+    """
   Generator function to simulate streaming data.
   """
-  for message in data:
-    json_data = message.model_dump_json()
-    yield f"data: {json_data}\n\n"
-    
+    for message in data:
+        json_data = message.model_dump_json()
+        yield f"data: {json_data}\n\n"
+
+
 def generate_streaming_introduction(data: str):
     """
     Generator function to simulate streaming data in the OpenAI format, word by word.
@@ -517,5 +577,10 @@ def generate_streaming_introduction(data: str):
     words = data.split()
     for word in words:
         # print(word)
-        json_data = json.dumps({"choices": [{"delta": {"content": word + " "}}]})
+        json_data = json.dumps(
+            {"choices": [{
+                "delta": {
+                    "content": word + " "
+                }
+            }]})
         yield f"data: {json_data}\n\n"
