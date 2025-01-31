@@ -3,15 +3,13 @@ import json
 import logging
 import time  # Used for simulating a delay in streaming
 from flask import Blueprint, request, Response, jsonify
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
-from flask_cors import CORS
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from openai import OpenAI
 from dotenv import load_dotenv
 from app.rag import pinecone_rag
 from groq import Groq
 from pinecone import Pinecone
 from app.functions.get_custom_llm_streaming import generate_user_uuid, augment_system_lists
-import instructor
 from app.rag.db import get_user_by_email, get_user_by_id, add_color_to_user, change_char, check_if_user_exists, create_user
 
 logging.basicConfig(level=logging.INFO)
@@ -27,8 +25,7 @@ book_index = pc.Index("ah-test")
 custom_llm = Blueprint('custom_llm', __name__)
 
 # client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-client = Groq(
-    api_key='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')
+# client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # OpenAI Client
 client_openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -550,7 +547,7 @@ def openai_advanced_custom_llm_route():
 # Function to provide interaction assistance and command handling
 def provide_interaction_assistance() -> str:
     assistance_text = (
-        f'''You can ask me anything about the book, such as summaries, key concepts, practical tips, and more
+        '''You can ask me anything about the book, such as summaries, key concepts, practical tips, and more
         For example, you can say things like: What is the book 'Atomic Habits' about. How do I build good habits. What is the Two-Minute Rule"
         Can you give me some tips on habit tracking Feel free to explore different topics and ask follow-up questions to dive deeper into specific concepts"
         If you're not sure where to start, just say 'Help' or 'What can I ask?' and I'll provide some suggestions.
