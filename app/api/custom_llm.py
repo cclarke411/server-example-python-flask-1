@@ -22,8 +22,6 @@ def generate_streaming_response(data):
     yield f"data: {json_data}\n\n"
 
 
-
-
 @custom_llm.route('/basic/chat/completions', methods=['POST'])
 def basic_custom_llm_route():
   request_data = request.get_json()
