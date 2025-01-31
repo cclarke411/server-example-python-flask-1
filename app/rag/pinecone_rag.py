@@ -29,8 +29,8 @@ client_openai_instructor = instructor.from_openai(
     client_openai)  # Apply the patch to the OpenAI client
 
 # Initialize Groq
-client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
-client = instructor.from_groq(client_groq, mode=instructor.Mode.TOOLS)
+# client_groq = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# client = instructor.from_groq(client_groq, mode=instructor.Mode.TOOLS)
 
 # embedder = SentenceTransformer("Alibaba-NLP/gte-Qwen2-1.5B-instruct")
 
@@ -270,7 +270,7 @@ def summarize_conversation(context: List[str]) -> str:
     today = date.today()
     date_string = str(today)
 
-    completion = client.chat.completions.create(
+    completion = client_openai_instructor.chat.completions.create(
         # engine="gpt-3.5-turbo",
         model="llama3-8b-8192",
         prompt=
