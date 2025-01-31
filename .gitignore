@@ -118,3 +118,5 @@ dmypy.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+app/response_data/webhook_logs.txt
+app/response_data/*
