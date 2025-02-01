@@ -535,6 +535,7 @@ def openai_advanced_custom_llm_route():
     }]
 
     request_data['messages'] = modified_message
+    print(request_data)
     if streaming:
         chat_completion_stream = client_openai.chat.completions.create(
             **request_data)
