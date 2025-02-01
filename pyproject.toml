@@ -19,11 +19,7 @@ tenacity = ">=8.2.0,<9.0.0"
 groq = "^0.12.0"
 flask_jwt_extended ="4.6.0"
 pymongo = "4.10.1"
-lama-cloud = "^0.1.2"
-llama-index = "^0.10.40"
-llama-index-agent-openai = "^0.2.9"
-llama-index-cli = "^0.1.13"
-llama-index-core = "0.12.15"
+llama-index-storage-docstore-mongodb = "^0.1.0"
 
 [build-system]
 requires = ["poetry-core"]
