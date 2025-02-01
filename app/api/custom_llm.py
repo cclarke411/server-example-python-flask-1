@@ -522,10 +522,11 @@ def openai_advanced_custom_llm_route():
     ----------
     PROMPT: {last_message['content']}.
     MODIFIED PROMPT: """
-    completion = client_openai.completions.create(model="gpt-3.5-turbo-instruct",
-                                           prompt=prompt,
-                                           max_tokens=500,
-                                           temperature=0.7)
+    completion = client_openai.completions.create(
+        model="gpt-3.5-turbo-instruct",
+        prompt=prompt,
+        max_tokens=500,
+        temperature=0.7)
     modified_message = request_data['messages'][:-1] + [{
         'content':
         completion.choices[0].text,
@@ -535,13 +536,14 @@ def openai_advanced_custom_llm_route():
 
     request_data['messages'] = modified_message
     if streaming:
-        chat_completion_stream = client.chat.completions.create(**request_data)
+        chat_completion_stream = client_openai.chat.completions.create(
+            **request_data)
 
         return Response(generate_streaming_response(chat_completion_stream),
                         content_type='text/event-stream')
     else:
         # Simulate a non-streaming response
-        chat_completion = client.chat.completions.create(**request_data)
+        chat_completion = client_openai.chat.completions.create(**request_data)
         return Response(chat_completion.model_dump_json(),
                         content_type='application/json')
 
