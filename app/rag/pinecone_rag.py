@@ -25,7 +25,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize OpenAI
 client_openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-client_openai_instructor = instructor.from_openai(
+client = instructor.from_openai(
     client_openai)  # Apply the patch to the OpenAI client
 
 # Initialize Groq
@@ -46,7 +46,7 @@ class ClassificationResponse(BaseModel):
 # Classification LLM for branch path
 def classify(data: str, keywords: List[str]) -> ClassificationResponse:
     """Perform single-label classification on the input text."""
-    return client_openai_instructor.chat.completions.create(
+    return client.chat.completions.create(
         # model="gpt-3.5-turbo",
         model='gpt-4o',
         response_model=ClassificationResponse,
@@ -270,9 +270,9 @@ def summarize_conversation(context: List[str]) -> str:
     today = date.today()
     date_string = str(today)
 
-    completion = client_openai_instructor.chat.completions.create(
+    completion = client.chat.completions.create(
         # engine="gpt-3.5-turbo",
-        model="llama3-8b-8192",
+        model="gpt-3.5-turbo",
         prompt=
         f"Summarize the following conversation that occurred at {current_time} on {date_string}:\\n{context}",
         temperature=0.3,
@@ -280,4 +280,6 @@ def summarize_conversation(context: List[str]) -> str:
         top_p=0.9,
         presence_penalty=0)
     summarization = completion.choices[0].text.strip()
+    return summarization
+
     return summarization
