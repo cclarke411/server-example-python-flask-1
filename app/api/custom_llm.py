@@ -522,7 +522,7 @@ def openai_advanced_custom_llm_route():
     ----------
     PROMPT: {last_message['content']}.
     MODIFIED PROMPT: """
-    completion = client.completions.create(model="gpt-3.5-turbo-instruct",
+    completion = client_openai.completions.create(model="gpt-3.5-turbo-instruct",
                                            prompt=prompt,
                                            max_tokens=500,
                                            temperature=0.7)
