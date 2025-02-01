@@ -30,7 +30,7 @@ custom_llm = Blueprint('custom_llm', __name__)
 
 # OpenAI Client
 client_openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-client = instructor.from_openai(client_openai)
+client_openai_instructor = instructor.from_openai(client_openai)
 
 
 @custom_llm.route('/token', methods=['POST'])
@@ -363,7 +363,7 @@ async def openai_advanced_chat_completions_route_new():
                     generate_streaming_response(chat_completion_stream),
                     content_type='text/event-stream')
             else:
-                chat_completion = client.chat.completions.create(
+                chat_completion = client_openai.chat.completions.create(
                     **llm_request_data)
                 return Response(chat_completion.model_dump_json(),
                                 content_type='application/json')
@@ -499,13 +499,14 @@ def custom_llm_openai_sse_handler():
     if streaming:
         # Simulate a stream of responses
 
-        chat_completion_stream = client.chat.completions.create(**request_data)
+        chat_completion_stream = client_openai.chat.completions.create(
+            **request_data)
 
         return Response(generate_streaming_response(chat_completion_stream),
                         content_type='text/event-stream')
     else:
         # Simulate a non-streaming response
-        chat_completion = client.chat.completions.create(**request_data)
+        chat_completion = client_openai.chat.completions.create(**request_data)
         return Response(chat_completion.model_dump_json(),
                         content_type='application/json')
 
