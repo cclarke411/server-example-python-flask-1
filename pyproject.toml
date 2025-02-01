@@ -23,8 +23,7 @@ lama-cloud = "^0.1.2"
 llama-index = "^0.10.40"
 llama-index-agent-openai = "^0.2.9"
 llama-index-cli = "^0.1.13"
-llama-index-core = "0.10.36"
-
+llama-index-core = "0.12.15"
 
 [build-system]
 requires = ["poetry-core"]
