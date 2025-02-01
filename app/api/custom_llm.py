@@ -4,6 +4,7 @@ import logging
 import time  # Used for simulating a delay in streaming
 from flask import Blueprint, request, Response, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+import instructor
 from openai import OpenAI
 from dotenv import load_dotenv
 from app.rag import pinecone_rag
