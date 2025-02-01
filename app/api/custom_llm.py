@@ -29,7 +29,7 @@ custom_llm = Blueprint('custom_llm', __name__)
 
 # OpenAI Client
 client_openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-# client_openai_instructor = instructor.from_openai(client_openai)
+client = instructor.from_openai(client_openai)
 
 
 @custom_llm.route('/token', methods=['POST'])
